@@ -32,7 +32,8 @@ public class SaleController {
 	public ResponseEntity<List<SaleReportDTO>> getReport(
 			@RequestParam(name = "minDate", defaultValue = "") String minDate,
 			@RequestParam(name = "maxDate", defaultValue = "") String maxDate,
-			@RequestParam(name = "name", defaultValue = "") String namePart){
+			@RequestParam(name = "name", defaultValue = "") String namePart)
+	{
 		List<SaleReportDTO> list = service.getReport(minDate, maxDate,namePart);
 		return ResponseEntity.ok().body(list);
 	}
